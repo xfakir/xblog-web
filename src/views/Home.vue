@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <navbar>navbar</navbar>
+    <profile>profile</profile>
+    <main-content>main-content</main-content>
+    <toolbar>toolbar</toolbar>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    Navbar: () => import("@/views/Navbar"),
+    Profile: () => import("@/views/Profile"),
+    MainContent: () => import("@/views/MainContent"),
+    Toolbar: () => import("@/views/Toolbar")
   }
 };
 </script>
+
+<style scoped>
+.home {
+  height: 100vh;
+  background: url("../assets/backgroud.jpg") no-repeat center;
+  background-size: 100%;
+}
+</style>
